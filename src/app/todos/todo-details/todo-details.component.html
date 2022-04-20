@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-12">
+    <h2>{{ todoItem.name }}</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <h5>{{ todoItem.details }}</h5>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <h5>Task Status: {{ todoItem.status === 'not-done' ? 'Not Done' : 'Done' }}</h5>
+  </div>
+</div><br>
+
+<div class="row">
+  <div class="col">
+    <button *ngIf="todoItem.status === 'not-done'" class="btn btn-outline-success ms-2 me-2" (click)="changeStatus()">Mark as Done</button>
+    <button *ngIf="todoItem.status !== 'not-done'" class="btn btn-outline-danger ms-2 me-2" (click)="changeStatus()">Mark as Not Done</button>
+    <button class="btn btn-outline-primary me-2" (click)="editTodo()" >Edit Todo</button>
+    <button class="btn btn-outline-danger" (click)="deleteTodo()">Delete</button>
+  </div>
+</div>
